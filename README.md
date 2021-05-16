@@ -1,7 +1,9 @@
 # Team-Profile-Generator
 website: https://kittytaylor55.github.io/Homework/Develop/
 github link: https://kittytaylor55.github.io/Team-Profile-Generator/
-
+display video: https://youtu.be/Cd_2SfYXSgI
+app in action: https://youtu.be/SkHe25vddik 
+(had to re-record the use of the app)
 
 # User Story
 
