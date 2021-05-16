@@ -38,7 +38,7 @@ Tested in the terminal, and verified that it showed correctly on the index.html.
 Using node, this app can add information to premade cards.
 
 ## Code Example
-
+``````
 var initialQuestion = function() {
     return inquirer
     .prompt([
@@ -68,6 +68,8 @@ var initialQuestion = function() {
         fs.appendFile('./dist/index.html', Manager.getCard(), function (err) {});
         memberLoopQuestion();
     });
+
+    ``````
 
 ## Uses
 Javascript
