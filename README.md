@@ -39,6 +39,36 @@ Using node, this app can add information to premade cards.
 
 ## Code Example
 
+var initialQuestion = function() {
+    return inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'team_manager_name',
+            message: 'What is your team managers name?',
+        },
+        {
+            type: 'input',
+            name: 'team_manager_id',
+            message: 'What is your team managers ID?',
+        },
+        {
+            type: 'input',
+            name: 'team_manager_email',
+            message: 'What is your team managers email?',
+        },
+        {
+            type: 'input',
+            name: 'team_manager_office_id',
+            message: 'What is your team managers Office ID?',
+        },
+    ])
+    .then((data) => {
+        var Manager = new manager(data.team_manager_name, data.team_manager_id, data.team_manager_email, data.team_manager_office_id);
+        fs.appendFile('./dist/index.html', Manager.getCard(), function (err) {});
+        memberLoopQuestion();
+    });
+
 ## Uses
 Javascript
 JSON
