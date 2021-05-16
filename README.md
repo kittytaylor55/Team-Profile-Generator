@@ -4,8 +4,11 @@ github link: https://kittytaylor55.github.io/Team-Profile-Generator/
 
 
 # User Story
+
 AS A manager
+
 I WANT to generate a webpage that displays my team's basic info
+
 SO THAT I have quick access to their emails and GitHub profiles
 
 ## Installation
@@ -28,42 +31,14 @@ Added questions to index.js and figured out how to  append and write to the html
 
 Tested in the terminal, and verified that it showed correctly on the index.html.
 
-<img src="https://kittytaylor55.github.io/Homework/Develop/Assets/screenshot.png" alt="screen shot of changes listed above"/>
+<img src="https://kittytaylor55.github.io/Team-Profile-Generator/Assets/screenshot.png" alt="screen shot of changes listed above"/>
 
 
 ## Features
 Using node, this app can add information to premade cards.
 
 ## Code Example
-var initialQuestion = function() {
-    return inquirer
-    .prompt([
-        {
-            type: 'input',
-            name: 'team_manager_name',
-            message: 'What is your team managers name?',
-        },
-        {
-            type: 'input',
-            name: 'team_manager_id',
-            message: 'What is your team managers ID?',
-        },
-        {
-            type: 'input',
-            name: 'team_manager_email',
-            message: 'What is your team managers email?',
-        },
-        {
-            type: 'input',
-            name: 'team_manager_office_id',
-            message: 'What is your team managers Office ID?',
-        },
-    ])
-    .then((data) => {
-        var Manager = new manager(data.team_manager_name, data.team_manager_id, data.team_manager_email, data.team_manager_office_id);
-        fs.appendFile('./dist/index.html', Manager.getCard(), function (err) {});
-        memberLoopQuestion();
-    });
+
 ## Uses
 Javascript
 JSON
