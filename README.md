@@ -37,6 +37,16 @@ Tested in the terminal, and verified that it showed correctly on the index.html.
 ## Features
 Using node, this app can add information to premade cards.
 
+## Uses
+Javascript
+JSON
+HTML 5
+Node with jest and inquirer installed
+
+## Credits
+https://ucsd.bootcampcontent.com/kittytaylor/ucsd-sd-fsf-pt-03-2021-u-c
+
+
 ## Code Example
 ``````
 var initialQuestion = function() {
@@ -71,11 +81,3 @@ var initialQuestion = function() {
 
 
 
-## Uses
-Javascript
-JSON
-HTML 5
-Node with jest and inquirer installed
-
-## Credits
-https://ucsd.bootcampcontent.com/kittytaylor/ucsd-sd-fsf-pt-03-2021-u-c
