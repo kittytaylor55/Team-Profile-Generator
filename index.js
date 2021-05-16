@@ -5,6 +5,16 @@
  const intern = require('./lib/intern');
  const manager = require('./lib/manager');
  
+ 
+ var template_top = fs.readFileSync('./src/template-top.txt', 'utf8');
+ var template_bottom = fs.readFileSync('./src/template-bottom.txt', 'utf8');
+ 
+ 
+ 
+ fs.writeFile('./dist/index.html', template_top, (err) =>
+ err ? console.error(err) : ''
+ );
+ 
  var initialQuestion = function() {
     return inquirer
     .prompt([
@@ -31,6 +41,7 @@
     ])
     .then((data) => {
         var Manager = new manager(data.team_manager_name, data.team_manager_id, data.team_manager_email, data.team_manager_office_id);
+        fs.appendFile('./dist/index.html', Manager.getCard(), function (err) {});
         memberLoopQuestion();
     });
     
@@ -81,9 +92,11 @@ function memberLoopQuestion() {
                 .then((data) => {
                     
                     var Engineer = new engineer(data.engineer_name, data.engineer_id, data.engineer_email, data.engineer_github);
-                    
+                    fs.appendFile('./dist/index.html', Engineer.getCard(), function (err) {});
                     if (data.add_another_member === true) {
                         memberLoopQuestion();
+                    } else {
+                        fs.appendFile('./dist/index.html', template_bottom, function (err) {});
                     }
                     
                 });
@@ -123,16 +136,17 @@ function memberLoopQuestion() {
                 .then((data) => {
                     
                     var Intern = new intern(data.intern_name, data.intern_id, data.intern_email, data.intern_school);
-                    
+                    fs.appendFile('./dist/index.html', Intern.getCard(), function (err) {});
                     if (data.add_another_member === true) {
                         memberLoopQuestion();
+                    } else {
+                        fs.appendFile('./dist/index.html', template_bottom, function (err) {});
                     }
                     
                 });
                 
             }
         });
-        
     }
     
     initialQuestion();
